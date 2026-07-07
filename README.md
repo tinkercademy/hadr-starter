@@ -2,17 +2,6 @@
 
 A monitoring agent for humanitarian assistance and disaster response (HADR).
 
-## The end state
-
-By Wednesday afternoon this repository contains an agent that:
-
-- watches live disaster feeds — GDACS, USGS and ReliefWeb (see `feeds/`)
-- filters out the noise and assesses what remains: what happened, where, how bad, who is affected
-- publishes a morning situation report to `dashboard.html` at 08:30 Singapore time
-- runs on a schedule, unattended, and stays quiet when nothing has changed
-
-How it does any of that is not specified anywhere in this repository. That is the course.
-
 ## The three days
 
 1. **Plan** — interrogate the feeds, write the PRD, cut it into vertical slices
