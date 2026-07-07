@@ -44,5 +44,8 @@ An agent that:
 2. Create your own repository from this template, then clone it
 3. Run `/install-github-app` so @claude reviews your pull requests from Day 2
 4. Install OpenCode and sign in with your Go key
+5. Add your Claude Code OAuth token to GitHub repo secrets:
+   - Get token from Claude Code IDE Settings > Developer
+   - Add to GitHub Settings > Secrets and variables > Actions > `CLAUDE_CODE_OAUTH_TOKEN`
 
 Then fill in `CLAUDE.md` before your first prompt.
