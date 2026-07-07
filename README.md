@@ -5,6 +5,19 @@ response (HADR): an unattended agent that watches live disaster feeds, decides w
 matters, and publishes a morning situation report — quietly, on a schedule, without
 being told to.
 
+## Contents
+
+- [What you'll build](#what-youll-build)
+- [This is a starter, not an app](#this-is-a-starter-not-an-app)
+- [The three days](#the-three-days)
+- [Repository layout](#repository-layout)
+- [The data feeds](#the-data-feeds)
+- [The morning sitrep pipeline](#the-morning-sitrep-pipeline)
+- [Claude Code automation](#claude-code-automation)
+- [Working conventions](#working-conventions)
+- [Getting started (Day 1 setup)](#getting-started-day-1-setup)
+- [Expected artefacts](#expected-artefacts)
+
 ## What you'll build
 
 By the end of the exercise this repository contains an agent that:
