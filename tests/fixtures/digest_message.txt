@@ -1,0 +1,10 @@
+🛡 CVE Patrol — 2026-07-08
+
+🔴 backend: +2 new, -1 fixed · 41 open (12 fixable)
+🟡 ingestion: no movement · 3 open (0 fixable)
+
+Fix MRs:
+• backend: https://gitlab.com/group/backend/-/merge_requests/7
+Waived: 2 findings suppressed
+
+Dashboard: https://normalwalrus.github.io/container-cve-fixer/dashboard.html

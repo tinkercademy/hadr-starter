@@ -2,6 +2,12 @@
 reports/
 *.sitrep.html
 
+# Transient per-run state (passed between CI jobs as artifacts); the
+# committed state is snapshot.json / fixes.json / notifications.json.
+state/scan-latest.json
+state/diff.json
+.pytest_cache/
+
 # dashboard.html is the exception: it is the product, and it is committed.
 !dashboard.html
 

@@ -1,0 +1,84 @@
+# The fleet. The agent only ever builds, scans, and patches what is listed
+# here — there is no discovery.
+#
+# Each target:
+#   name:          unique friendly name (used everywhere as the target key)
+#   project:       GitLab project path (group/name) on gitlab_host
+#   dockerfile:    path to the Dockerfile within the project
+#   context:       docker build context within the project (default ".")
+#   build_target:  --target stage for multi-stage builds (optional)
+#   build_args:    per-target build args; merged over defaults.build_args
+#   owner:         who reviews the fix MR
+#   enabled:       false = skip entirely (kept visible, not scanned)
+#
+# TODO(owner): replace every <GITLAB-GROUP> with the real project paths, and
+# fill defaults.build_args with the real BASE_REGISTRY/BASE_IMAGE/BASE_TAG
+# values, then flip the affected targets to enabled: true.
+
+gitlab_host: https://gitlab.com
+
+defaults:
+  context: "."
+  owner: normalwalrus
+  enabled: true
+  build_args: {}
+    # BASE_REGISTRY: "<fill me>"
+    # BASE_IMAGE: "<fill me>"
+    # BASE_TAG: "<fill me>"
+
+targets:
+  - name: backend
+    project: <GITLAB-GROUP>/backend
+    dockerfile: dockerfile.backend
+
+  # --- Blocked on BASE_* build args (Dockerfiles use ${BASE_REGISTRY}/...) ---
+  - name: audio-processor
+    project: <GITLAB-GROUP>/audio_processor
+    dockerfile: Dockerfile
+    build_target: production
+    enabled: false
+  - name: transcript-aggregator
+    project: <GITLAB-GROUP>/transcript_aggregator
+    dockerfile: Dockerfile
+    build_target: production
+    enabled: false
+  - name: diarization
+    project: <GITLAB-GROUP>/diarization
+    dockerfile: Dockerfile
+    build_target: production
+    enabled: false
+  - name: ingestion
+    project: <GITLAB-GROUP>/ingestion
+    dockerfile: dockerfile
+    build_target: production
+    enabled: false
+  - name: cleanup-worker
+    project: <GITLAB-GROUP>/cleanup_worker
+    dockerfile: Dockerfile
+    build_target: production
+    enabled: false
+  - name: preprocessor
+    project: <GITLAB-GROUP>/preprocessor
+    dockerfile: Dockerfile
+    build_target: production
+    enabled: false
+  - name: postgres
+    project: <GITLAB-GROUP>/postgres
+    dockerfile: dockerfile
+    enabled: false
+  - name: rabbitmq
+    project: <GITLAB-GROUP>/rabbitmq
+    dockerfile: dockerfile
+    enabled: false
+  - name: seaweedfs
+    project: <GITLAB-GROUP>/seaweedfs
+    dockerfile: dockerfile
+    enabled: false
+
+  # --- Very large base (vllm/vllm-openai ~10 GB); enable once runner disk
+  #     is confirmed to fit, or scan on a beefier self-hosted runner ---
+  - name: whisper-vllm
+    project: <GITLAB-GROUP>/whisper-vllm
+    dockerfile: Dockerfile
+    build_target: production
+    enabled: false

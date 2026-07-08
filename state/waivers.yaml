@@ -1,0 +1,10 @@
+# Waived findings: suppressed from the dashboard, the diff, and fix MRs
+# until expiry. Every entry needs a reason — a waiver without a reason is
+# just a hidden bug.
+#
+# - cve_id: CVE-2025-00000
+#   target: backend
+#   reason: "false positive — package not reachable at runtime"
+#   expires_at: 2026-10-01
+#   created_by: normalwalrus
+[]

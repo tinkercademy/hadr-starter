@@ -1,0 +1,32 @@
+[
+ {
+  "cve_id": "CVE-2025-1111",
+  "cvss": 8.1,
+  "fixed_version": "3.0.14-1",
+  "installed_version": "3.0.11-1",
+  "layer_origin": "base",
+  "package": "libssl3",
+  "severity": "HIGH",
+  "target": "backend"
+ },
+ {
+  "cve_id": "CVE-2025-2222",
+  "cvss": null,
+  "fixed_version": null,
+  "installed_version": "1.2.13-1",
+  "layer_origin": "base",
+  "package": "zlib1g",
+  "severity": "LOW",
+  "target": "backend"
+ },
+ {
+  "cve_id": "CVE-2025-3333",
+  "cvss": 9.8,
+  "fixed_version": "2.32.0",
+  "installed_version": "2.28.0",
+  "layer_origin": "app",
+  "package": "requests",
+  "severity": "CRITICAL",
+  "target": "backend"
+ }
+]
